@@ -1,0 +1,40 @@
+@use '_variables' as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $cinza-escuro-100;
+  color: $preto;
+}
+
+h1 {
+  font-size: $heading-1-desktop;
+}
+
+h2 {
+  font-size: $heading-2-desktop;
+}
+
+h3 {
+  font-size: $heading-3-desktop;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: $branco;
+  text-decoration: none;
+}
+
+ul {
+  margin-left: $spacing-1;
+  list-style-type: none;
+}
