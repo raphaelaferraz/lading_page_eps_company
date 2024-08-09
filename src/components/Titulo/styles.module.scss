@@ -1,0 +1,31 @@
+@use "../../styles/_variables" as *;
+
+
+.secao {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__titulo {
+    font-size: $heading-2-desktop;
+    font-weight: $font-bold; 
+    color: $azul-30;
+    text-align: center;
+    margin-bottom: .5rem;
+
+    @media (max-width: 768px) {
+      font-size: $heading-2-mobile;
+      line-height: 2rem;
+    }
+  }
+
+  &__span {
+    height: 5px;
+    width: 25%;
+    border-radius: 20px;
+
+    @media (max-width: 768px) {
+      width: 50%;
+    }
+  }
+}
