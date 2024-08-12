@@ -1,15 +1,44 @@
 @use "../../styles/_variables" as *;
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: url("background-header.png") lightgray 50% / cover no-repeat;
+  background-blend-mode: luminosity;
   padding: $spacing-2 $spacing-3;
   width: 100%;
   transition: background-color 0.3s;
   z-index: 3; 
   top: 0;
   left: 0;
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__container-infos {
+    &__titulo {
+      font-family: $heading-1-desktop;
+      margin-top: $spacing-4;
+      width: 650px;
+      line-height: $spacing-4;
+
+      @media (max-width: 768px) {
+        font-family: $heading-1-mobile;
+        width: 100%;
+      }
+
+      &__span {
+        &-vermelho {
+          color: $vermelho-50;
+        }
+
+        &-azul {
+          color: $azul-100;
+        }
+      }
+    }
+  }
 
   &__container__imagem {
     width: $spacing-5;

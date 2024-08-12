@@ -36,32 +36,39 @@ export default function Header() {
 
   return ReactDOM.createPortal(
     <header className={`${styles.header} ${scroll ? styles.scrolled : ''} ${menuOpen ? styles["menu-ativo"] : ''}`}>
-      <div className={styles.header__container}>
-        {window.innerWidth > 768 ? <img className={styles.header__container__imagem} src="/logo-desktop.svg"/> : <img className={styles.header__container__imagem} src="/logo-mobile.svg"/>}
+      <section className={styles.header__section}>
+        <div className={styles.header__container}>
+          {window.innerWidth > 768 ? <img className={styles.header__container__imagem} src="/logo-desktop.svg"/> : <img className={styles.header__container__imagem} src="/logo-mobile.svg"/>}
+        </div>
+        <input type="checkbox" id="menuToggle" className={styles.header__menu} onChange={toggleMenu}/>
+        <label htmlFor="menuToggle" className={styles.header__menu__label}>
+          <img src={getMenuImage()} alt={menuOpen ? 'Close' : 'Menu'} className={menuOpen ? styles.header__menu__label__close : styles.header__menu__label__open} />
+        </label>
+        <nav className={styles.header__nav}>
+          <ul className={styles.header__nav__list}>
+            <li className={styles.header__nav__list__item}>
+              <a className={styles.header__nav__list__item__link} href="/">Produtos</a>
+            </li>
+            <li className={styles.header__nav__list__item}>
+              <a className={styles.header__nav__list__item__link} href="/">Aplicações do Isopor</a>
+            </li>
+            <li className={styles.header__nav__list__item}>
+              <a className={styles.header__nav__list__item__link} href="/">Sobre nós</a>
+            </li>
+            <li className={styles.header__nav__list__item}>
+              <a className={styles.header__nav__list__item__link} href="/">Contato</a>
+            </li>
+            <li className={styles.header__nav__list__item}>
+              <a className={`${styles.header__nav__list__item__link} ${styles.header__nav__list__item__link__botao}`} href="/">Faça seu orçamento</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <div className={styles["header__container-infos"]}>
+        <h1 className={styles["header__container-infos__titulo"]}>Transforme seu ambiente 
+        com isopor <span className={styles["header__container-infos__titulo__span-vermelho"]}>sob </span><span className={styles["header__container-infos__titulo__span-azul"]}>medida</span>!</h1>
       </div>
-      <input type="checkbox" id="menuToggle" className={styles.header__menu} onChange={toggleMenu}/>
-      <label htmlFor="menuToggle" className={styles.header__menu__label}>
-        <img src={getMenuImage()} alt={menuOpen ? 'Close' : 'Menu'} className={menuOpen ? styles.header__menu__label__close : styles.header__menu__label__open} />
-      </label>
-      <nav className={styles.header__nav}>
-        <ul className={styles.header__nav__list}>
-          <li className={styles.header__nav__list__item}>
-            <a className={styles.header__nav__list__item__link} href="/">Produtos</a>
-          </li>
-          <li className={styles.header__nav__list__item}>
-            <a className={styles.header__nav__list__item__link} href="/">Aplicações do Isopor</a>
-          </li>
-          <li className={styles.header__nav__list__item}>
-            <a className={styles.header__nav__list__item__link} href="/">Sobre nós</a>
-          </li>
-          <li className={styles.header__nav__list__item}>
-            <a className={styles.header__nav__list__item__link} href="/">Contato</a>
-          </li>
-          <li className={styles.header__nav__list__item}>
-            <a className={`${styles.header__nav__list__item__link} ${styles.header__nav__list__item__link__botao}`} href="/">Faça seu orçamento</a>
-          </li>
-        </ul>
-      </nav>
     </header>, document.getElementById('header')
   );
 }
