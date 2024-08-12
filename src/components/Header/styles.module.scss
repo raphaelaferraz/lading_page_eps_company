@@ -16,16 +16,32 @@
     align-items: center;
   }
 
+  &__container-botoes {
+    margin-top: $spacing-8;
+    margin-bottom: $spacing-4;
+    display: flex;
+    gap: $spacing-2;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: start;
+      margin-top: $spacing-3;
+      margin-bottom: $spacing-2;
+      width: 100%;
+    }
+  }
+
   &__container-infos {
     &__titulo {
       font-family: $heading-1-desktop;
-      margin-top: $spacing-4;
+      margin-top: $spacing-8;
       width: 650px;
       line-height: $spacing-4;
 
       @media (max-width: 768px) {
         font-family: $heading-1-mobile;
         width: 100%;
+        margin-top: $spacing-3;
       }
 
       &__span {
@@ -67,7 +83,7 @@
       cursor: pointer;
   
       &__close {
-        width: 12px;  
+        width: $spacing-2;  
         height: auto;
       }
 
@@ -169,6 +185,7 @@
   }
 
   .menu-ativo {
-    background-color: transparent; 
+    background-color: $azul-80 !important;
+    background: initial;
   }
 }

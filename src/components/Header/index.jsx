@@ -1,6 +1,8 @@
 import styles from './styles.module.scss';
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import BotaoPrimario from '../BotaoPrimario';
+import BotaoSecundario from '../BotaoSecundario';
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
@@ -68,6 +70,17 @@ export default function Header() {
       <div className={styles["header__container-infos"]}>
         <h1 className={styles["header__container-infos__titulo"]}>Transforme seu ambiente 
         com isopor <span className={styles["header__container-infos__titulo__span-vermelho"]}>sob </span><span className={styles["header__container-infos__titulo__span-azul"]}>medida</span>!</h1>
+      </div>
+
+      <div className={styles["header__container-botoes"]}>
+        <BotaoSecundario 
+          texto="Conheça nossos produtos"
+          caminho="/produtos"
+        />
+        <BotaoPrimario 
+          texto="Faça seu orçamento"
+          caminho="/produtos"
+        />
       </div>
     </header>, document.getElementById('header')
   );

@@ -1,0 +1,15 @@
+@use "../../styles/_variables" as *;
+
+.botao {
+  padding: $spacing-1;
+  background-color: $azul-100;
+  border-radius: 20px;
+  color: $branco;
+  font-size: $normal-text;
+  font-weight: $font-light;
+  transition: all .5s;
+
+  &:hover {
+    background-color: $azul-90;
+  }
+}
