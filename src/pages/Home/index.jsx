@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import CardAplicacoes from "../../components/CardAplicacoes";
 import CardProduto from "../../components/CardProduto";
+import CardResumoProduto from "../../components/CardResumoProduto";
 
 export default function Home() {
   return (
@@ -26,6 +27,13 @@ export default function Home() {
         titulo="Placas de Isopor"
         descricao="Placas de isopor para isolamento térmico e acústico, com diversas espessuras e tamanhos. Ideal para quem busca conforto térmico e acústico em ambientes residenciais e comerciais."
         textoBotao="Faça seu orçamento"
+        imagem="/placas-card-produto.png"
+      />
+
+      <CardResumoProduto 
+        titulo="Placas de Isopor"
+        descricao="Sob medida"
+        textoBotao="Ver mais"
         imagem="/placas-card-produto.png"
       />
       <Footer />
