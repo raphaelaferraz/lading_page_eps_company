@@ -67,7 +67,7 @@ export default function Header() {
         </nav>
       </section>
 
-      <div className={styles["header__container-infos"]}>
+      <div className={`${styles["header__container-infos"]} ${menuOpen ? styles["hidden"] : ''}`}>
         <h1 className={styles["header__container-infos__titulo"]}>Transforme seu ambiente 
         com isopor <span className={styles["header__container-infos__titulo__span-vermelho"]}>sob </span><span className={styles["header__container-infos__titulo__span-azul"]}>medida</span>!</h1>
       </div>

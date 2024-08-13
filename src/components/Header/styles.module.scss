@@ -57,8 +57,6 @@
   }
 
   &__container__imagem {
-    width: $spacing-5;
-    height: $spacing-5;
 
     @media (max-width: 768px) {
       width: $spacing-3;
