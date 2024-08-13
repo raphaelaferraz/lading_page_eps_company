@@ -4,8 +4,13 @@ import Header from "../../components/Header";
 import CardAplicacoes from "../../components/CardAplicacoes";
 import CardProduto from "../../components/CardProduto";
 import CardResumoProduto from "../../components/CardResumoProduto";
+import Input from "../../components/Input";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [nome, setNome] = useState('');
+
   return (
     <main>
       <Header />
@@ -28,6 +33,7 @@ export default function Home() {
         descricao="Placas de isopor para isolamento térmico e acústico, com diversas espessuras e tamanhos. Ideal para quem busca conforto térmico e acústico em ambientes residenciais e comerciais."
         textoBotao="Faça seu orçamento"
         imagem="/placas-card-produto.png"
+        linkBotao="/"
       />
 
       <CardResumoProduto 
@@ -35,6 +41,15 @@ export default function Home() {
         descricao="Sob medida"
         textoBotao="Ver mais"
         imagem="/placas-card-produto.png"
+        linkBotao="/"
+      />
+
+      <Input 
+        type={"text"}
+        name={"nome"}
+        value={nome}
+        placeholder={"Digite seu nome"}
+        onChange={setNome}
       />
       <Footer />
     </main>

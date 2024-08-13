@@ -1,0 +1,17 @@
+@use "../../styles/_variables" as *;
+
+.input {
+  height: $spacing-3;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  background-color: $cinza-escuro-100;
+  padding: $spacing-1;
+  color: $azul-10;
+  font-size: $large-text;
+  font-weight: $font-light;
+
+  &::placeholder {
+    color: $cinza-claro-20;
+  }
+}

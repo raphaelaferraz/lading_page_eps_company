@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import BotaoPrimario from '../BotaoPrimario';
 
-export default function CardProduto({ titulo, descricao, textoBotao, imagem }) {
+export default function CardProduto({ titulo, descricao, textoBotao, imagem, linkBotao }) {
   return (
     <div className={styles.container}>
       <div className={styles["container__container-imagem"]}>
@@ -15,7 +15,7 @@ export default function CardProduto({ titulo, descricao, textoBotao, imagem }) {
         <div className={styles["container__container-texto__botao"]}>
           <BotaoPrimario 
             texto={textoBotao}
-            caminho='/'
+            caminho={linkBotao}
           />
         </div>
       </div>
@@ -28,4 +28,5 @@ CardProduto.propTypes = {
   descricao: PropTypes.string.isRequired,
   textoBotao: PropTypes.string.isRequired,
   imagem: PropTypes.string.isRequired,
+  linkBotao: PropTypes.string.isRequired,
 };
