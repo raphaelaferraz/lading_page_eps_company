@@ -45,6 +45,7 @@ export default function Home() {
       />
 
       <Input 
+        label={"nome"}
         type={"text"}
         name={"nome"}
         value={nome}

@@ -1,20 +1,26 @@
 import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
 
-export default function Input({ type, name, value, onChange, placeholder }) {
+export default function Input({ id, label, type, name, value, onChange, placeholder }) {
   return (
-    <input
-      className={styles.input}
-      type={type}
-      name={name} 
-      value={value}
-      placeholder={placeholder}
-      onChange={(e) => onChange(e.target.value)}
-    />
+    <div className={styles.container}>
+      <label htmlFor={id} className={styles.container__label}>{label}</label>
+      <input
+        id={id}
+        className={styles.container__input}
+        type={type}
+        name={name} 
+        value={value}
+        placeholder={placeholder}
+        onChange={(e) => onChange(e.target.value)}
+      />
+    </div>
   );
 }
 
 Input.propTypes = {
+  id: PropTypes.string,
+  label: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string.isRequired, 
   placeholder: PropTypes.string,
