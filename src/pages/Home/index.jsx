@@ -6,6 +6,7 @@ import CardProduto from "../../components/CardProduto";
 import CardResumoProduto from "../../components/CardResumoProduto";
 import Input from "../../components/Input";
 import { useState } from "react";
+import Dropdown from "../../components/Dropdown";
 
 export default function Home() {
 
@@ -52,6 +53,15 @@ export default function Home() {
         placeholder={"Digite seu nome"}
         onChange={setNome}
       />
+
+      <Dropdown 
+        id={"estado"}
+        label={"Estado"}
+        options={["São Paulo", "Rio de Janeiro", "Minas Gerais", "Espírito Santo"]}
+        value={"São Paulo"}
+        onChange={(value) => console.log(value)}
+      />
+
       <Footer />
     </main>
   );
