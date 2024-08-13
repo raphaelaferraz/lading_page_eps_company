@@ -72,7 +72,7 @@ export default function Header() {
         com isopor <span className={styles["header__container-infos__titulo__span-vermelho"]}>sob </span><span className={styles["header__container-infos__titulo__span-azul"]}>medida</span>!</h1>
       </div>
 
-      <div className={styles["header__container-botoes"]}>
+      <div className={`${styles["header__container-botoes"]} ${menuOpen ? styles["hidden"] : ''}`}>
         <BotaoSecundario 
           texto="Conheça nossos produtos"
           caminho="/produtos"
