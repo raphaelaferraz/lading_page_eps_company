@@ -7,6 +7,7 @@ import CardResumoProduto from "../../components/CardResumoProduto";
 import Input from "../../components/Input";
 import { useState } from "react";
 import Dropdown from "../../components/Dropdown";
+import Textarea from "../../components/Textarea";
 
 export default function Home() {
 
@@ -59,6 +60,15 @@ export default function Home() {
         label={"Estado"}
         options={["São Paulo", "Rio de Janeiro", "Minas Gerais", "Espírito Santo"]}
         value={"São Paulo"}
+        onChange={(value) => console.log(value)}
+      />
+
+      <Textarea 
+        id={"mensagem"}
+        label={"Mensagem"}
+        name={"mensagem"}
+        value={""}
+        placeholder={"Digite sua mensagem"}
         onChange={(value) => console.log(value)}
       />
 
