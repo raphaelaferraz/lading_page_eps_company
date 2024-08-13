@@ -1,0 +1,72 @@
+@use "../../styles/_variables" as *;
+
+.container {
+  border: 1px solid $azul-10;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  overflow: hidden; 
+  justify-content: center;
+
+  &__container {
+    &-imagem {
+      flex: 0; 
+      
+      &__imagem {
+        width: $spacing-24;
+        height: 100%;
+        object-fit: cover; 
+        border-radius: inherit; 
+
+        @media (max-width: 768px) {
+          width: 100%;
+          height: $spacing-12;
+          object-fit: cover; 
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex: 1;
+      }
+    }
+
+    &-texto {
+      flex: 1; 
+      padding: $spacing-3 $spacing-2;
+
+      &__titulo {
+        font-size: $heading-2-desktop;
+        font-weight: $font-regular;
+
+        @media (max-width: 768px) {
+          font-size: $heading-2-mobile;
+        }
+      }
+
+      &__descricao {
+        margin-top: $spacing-1-5;
+        font-size: $normal-text;
+        font-weight: $font-light;
+        line-height: $spacing-1-5;
+        color: $azul-10;
+
+        @media (max-width: 768px) {
+          margin-top: $spacing-1;
+        }
+      }
+
+      &__botao {
+        margin-top: $spacing-3;
+      }
+
+      @media (max-width: 768px) {
+        padding: $spacing-2 $spacing-1;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
