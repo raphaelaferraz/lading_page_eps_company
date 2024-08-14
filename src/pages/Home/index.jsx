@@ -8,6 +8,7 @@ import Input from "../../components/Input";
 import { useState } from "react";
 import Dropdown from "../../components/Dropdown";
 import Textarea from "../../components/Textarea";
+import styles from "./styles.module.scss";
 
 export default function Home() {
 
@@ -71,7 +72,11 @@ export default function Home() {
         placeholder={"Digite sua mensagem"}
         onChange={(value) => console.log(value)}
       />
-
+      <div className={styles["container-botao"]}>
+        <a href="https://wa.me/5511954686050" className={styles["container-botao__link"]}>
+          <img src="/whatsapp.svg" alt="WhatsApp"/>
+        </a>
+      </div>
       <Footer />
     </main>
   );
