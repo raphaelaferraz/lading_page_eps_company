@@ -25,7 +25,7 @@ export default function Footer() {
           </li>
 
           <li className={styles.footer__container__lista__item}>
-            <a className={styles.footer__container__lista__item__link} href="https://wa.me/5511999999999" rel="noreferrer">
+            <a className={styles.footer__container__lista__item__link} href="https://wa.me/5511954686050" rel="noreferrer">
               <img className={styles.footer__container__lista__item__link__imagem} src="/icone-whatsapp.svg" alt="WhatsApp" />
               WhatsApp
             </a>
