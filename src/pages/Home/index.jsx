@@ -4,21 +4,15 @@ import Header from "../../components/Header";
 import CardAplicacoes from "../../components/CardAplicacoes";
 import CardProduto from "../../components/CardProduto";
 import CardResumoProduto from "../../components/CardResumoProduto";
-import Input from "../../components/Input";
-import { useState } from "react";
-import Dropdown from "../../components/Dropdown";
-import Textarea from "../../components/Textarea";
 import styles from "./styles.module.scss";
+import Formulario from "../../components/Formulario";
 
 export default function Home() {
-
-  const [nome, setNome] = useState('');
+  
 
   return (
     <main>
       <Header />
-      <h1>Home</h1>
-      <p>Welcome to the Home page!</p>
       <Titulo 
         conteudo="Confira nossos principais produtos"
         cor="#1E52CF"
@@ -47,31 +41,8 @@ export default function Home() {
         linkBotao="/"
       />
 
-      <Input 
-        label={"nome"}
-        type={"text"}
-        name={"nome"}
-        value={nome}
-        placeholder={"Digite seu nome"}
-        onChange={setNome}
-      />
+      <Formulario />
 
-      <Dropdown 
-        id={"estado"}
-        label={"Estado"}
-        options={["São Paulo", "Rio de Janeiro", "Minas Gerais", "Espírito Santo"]}
-        value={"São Paulo"}
-        onChange={(value) => console.log(value)}
-      />
-
-      <Textarea 
-        id={"mensagem"}
-        label={"Mensagem"}
-        name={"mensagem"}
-        value={""}
-        placeholder={"Digite sua mensagem"}
-        onChange={(value) => console.log(value)}
-      />
       <div className={styles["container-botao"]}>
         <a href="https://wa.me/5511954686050" className={styles["container-botao__link"]}>
           <img src="/whatsapp.svg" alt="WhatsApp"/>
