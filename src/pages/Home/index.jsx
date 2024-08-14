@@ -4,8 +4,8 @@ import Header from "../../components/Header";
 import CardAplicacoes from "../../components/CardAplicacoes";
 import CardProduto from "../../components/CardProduto";
 import CardResumoProduto from "../../components/CardResumoProduto";
-import styles from "./styles.module.scss";
 import Formulario from "../../components/Formulario";
+import BotaoWhatsapp from "../../components/BotaoWhatsapp";
 
 export default function Home() {
   
@@ -43,11 +43,7 @@ export default function Home() {
 
       <Formulario />
 
-      <div className={styles["container-botao"]}>
-        <a href="https://wa.me/5511954686050" className={styles["container-botao__link"]}>
-          <img src="/whatsapp.svg" alt="WhatsApp"/>
-        </a>
-      </div>
+      <BotaoWhatsapp numero="5511954686050" mensagem="Olá, gostaria de fazer um orçamento"/>
       <Footer />
     </main>
   );
