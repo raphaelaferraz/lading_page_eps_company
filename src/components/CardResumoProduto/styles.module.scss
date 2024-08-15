@@ -11,15 +11,15 @@
   &__container {
     &-texto {
       background: $cinza-escuro-70, #5A564F;
-      backdrop-filter: blur(64px);
-      padding: $spacing-1-5 $spacing-1;
+      backdrop-filter: blur(100px);
+      padding: $spacing-1 $spacing-0;
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       &__div {
         &__titulo {
-          font-size: $large-text;
+          font-size: $normal-text;
           color: $branco;
           font-weight: $font-medium;
           margin-bottom: $spacing-0;
@@ -27,7 +27,7 @@
 
         &__descricao {
           font-size: $small-text;
-          color: $azul-10;
+          color: $azul-30;
           font-weight: $font-light;
         }
       }

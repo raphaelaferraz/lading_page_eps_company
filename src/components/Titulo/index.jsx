@@ -5,7 +5,6 @@ export default function Titulo({ conteudo, cor }) {
   return (
     <section className={styles.secao}>
       <h2 className={styles.secao__titulo}>{conteudo}</h2>
-      {/* adiciona cor de fundo do span de acordo com a prop */}
       <div className={styles.secao__span} style={{ background: cor }} />
     </section>
   )
