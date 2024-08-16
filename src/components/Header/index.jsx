@@ -75,11 +75,11 @@ export default function Header() {
       <div className={`${styles["header__container-botoes"]} ${menuOpen ? styles["hidden"] : ''}`}>
         <BotaoSecundario 
           texto="Conheça nossos produtos"
-          caminho="/produtos"
+          caminho="#produtos"
         />
         <BotaoPrimario 
           texto="Faça seu orçamento"
-          caminho="/produtos"
+          caminho="#formulario"
         />
       </div>
     </header>, document.getElementById('header')
