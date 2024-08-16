@@ -6,7 +6,12 @@
   height: 310px; 
   display: flex;
   flex-direction: column;
-  justify-content: end; 
+  justify-content: end;
+  
+  // media query
+  @media (min-width: 768px) {
+    margin: 0 auto;
+  }
 
   &__container {
     &-texto {
@@ -32,5 +37,9 @@
         }
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
   }
 }

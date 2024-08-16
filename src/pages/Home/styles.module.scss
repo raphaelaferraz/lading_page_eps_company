@@ -21,6 +21,11 @@
   }
 }
 
+.secao-principais-produtos {
+  @media (max-width: 768px) {
+  }
+}
+
 .secao-aplicacoes {
   &__container {
     flex-wrap: wrap;
