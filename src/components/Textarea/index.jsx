@@ -11,7 +11,7 @@ export default function Textarea({ id, label, name, value, onChange, placeholder
         name={name}
         value={value}
         placeholder={placeholder}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
       />
     </div>
   );

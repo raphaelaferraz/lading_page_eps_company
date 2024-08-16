@@ -3,43 +3,68 @@ import Input from '../Input';
 import Dropdown from '../Dropdown';
 import Textarea from '../Textarea';
 import styles from './styles.module.scss';
+import emailjs from '@emailjs/browser';
 
 export default function Formulario() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
-  const [produtoSelecionado, setProdutoSelecionado] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [produto, setProduto] = useState('');
   const [mensagem, setMensagem] = useState('');
+  const [envio, setEnvio] = useState(false);
 
-  const handleSubmit = async e => {
-    e.preventDefault();
+  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    const dadosFormulario = {
-      nome,
-      email,
-      produtoSelecionado,
-      mensagem
-    };
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    telefone: '',
+    produto: '',
+    mensagem: ''
+  });
 
-    console.log(dadosFormulario);
-    //   try {
-    //     const response = await fetch('https://sua-api-aqui.com/enviar', {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(dadosFormulario),
-    //     });
+  const handleSelectChange = e => {
+    setProduto(e.target.value);
 
-    //     if (response.ok) {
-    //       alert('Formulário enviado com sucesso!');
-    //     } else {
-    //       alert('Erro ao enviar o formulário. Tente novamente.');
-    //     }
-    //   } catch (error) {
-    //     console.error('Erro ao enviar o formulário:', error);
-    //     alert('Erro ao enviar o formulário. Tente novamente.');
-    //   }
-    // };
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      produto: e.target.value
+    }));
+  };
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }));
+
+    if (name === 'nome') setNome(value);
+    if (name === 'email') setEmail(value);
+    if (name === 'telefone') setTelefone(value);
+    if (name === 'mensagem') setMensagem(value);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    setEnvio(true);
+
+    emailjs.send(serviceID, templateID, formData, publicKey).then(
+      resultado => {
+        console.log(resultado.text);
+        alert('Obrigada pelo envio!');
+        setEnvio(false);
+      },
+      error => {
+        console.log(error.text);
+        alert(
+          'Houve um erro ao enviar o formulário. Por favor, tente novamente.'
+        );
+        setEnvio(false);
+      }
+    );
   };
 
   return (
@@ -50,20 +75,30 @@ export default function Formulario() {
         name={'nome'}
         value={nome}
         placeholder={'Digite seu nome completo'}
-        onChange={setNome}
+        onChange={handleChange}
       />
 
       <Input
         label={'E-mail'}
-        type={'text'}
+        type={'email'}
         name={'email'}
         value={email}
-        placeholder={'Digite seu e-mail completo'}
-        onChange={setEmail}
+        placeholder={'Digite seu e-mail completo. Exemplo: seu@email.com'}
+        onChange={handleChange}
+      />
+
+      <Input
+        label={'Telefone'}
+        type={'tel'}
+        name={'telefone'}
+        value={telefone}
+        placeholder={'Digite seu telefone. Exemplo: 11999999999'}
+        onChange={handleChange}
       />
 
       <Dropdown
         id={'produto'}
+        name={'produto'}
         label={'Produto'}
         placeholder={'Selecione o produto que possui interesse'}
         options={[
@@ -73,8 +108,8 @@ export default function Formulario() {
           'Letras personalizadas',
           'Outros'
         ]}
-        value={produtoSelecionado}
-        onChange={value => setProdutoSelecionado(value)}
+        value={produto}
+        onChange={handleSelectChange}
       />
 
       <Textarea
@@ -83,10 +118,14 @@ export default function Formulario() {
         name={'mensagem'}
         value={mensagem}
         placeholder={'Digite sua mensagem de orçamento'}
-        onChange={value => setMensagem(value)}
+        onChange={handleChange}
       />
 
-      <button type='submit' className={styles.formulario__botao}>
+      <button
+        type='submit'
+        className={styles.formulario__botao}
+        disabled={envio}
+      >
         Enviar orçamento
       </button>
     </form>
