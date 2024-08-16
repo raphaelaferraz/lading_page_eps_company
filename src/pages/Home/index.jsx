@@ -14,6 +14,15 @@ import CarrosselAplicacoes from '../../components/CarrosselAplicacoes';
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [mostrarMais, setMostrarMais] = useState(false);
+
+  const handleMostrarMais = () => {
+    setMostrarMais(true);
+  };
+
+  const handleMostrarMenos = () => {
+    setMostrarMais(false);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,7 +39,9 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <section id={'principais-produtos'} className={styles['secao-principais-produtos']}
+      <section
+        id={'principais-produtos'}
+        className={styles['secao-principais-produtos']}
       >
         <Titulo conteudo='Confira nossos principais produtos' cor='#1E52CF' />
 
@@ -120,23 +131,37 @@ export default function Home() {
             linkBotao='#formulario'
           />
 
-          <CardProduto
-            id={'letras'}
-            titulo='Letras de Isopor'
-            descricao='Letras personalizadas em isopor, perfeitas para destacar fachadas de lojas, empresas ou outros meios de comunicação visual. Disponíveis em diferentes tipos de isopor, essas letras podem ser moldadas em diversos tamanhos e estilos, atendendo às necessidades específicas de sua marca ou evento. Seja para decoração, publicidade ou sinalização, oferecemos soluções criativas e de alta qualidade. Para saber mais sobre as opções de personalização e cores disponíveis, entre em contato com a EPS Company.'
-            textoBotao='Faça seu orçamento'
-            imagem='/letras-personalizadas-card-produto.png'
-            linkBotao='#formulario'
-          />
+          {mostrarMais && (
+            <>
+              <CardProduto
+                id='letras'
+                titulo='Letras de Isopor'
+                descricao='Letras personalizadas em isopor, perfeitas para destacar fachadas de lojas, empresas ou outros meios de comunicação visual. Disponíveis em diferentes tipos de isopor, essas letras podem ser moldadas em diversos tamanhos e estilos, atendendo às necessidades específicas de sua marca ou evento. Seja para decoração, publicidade ou sinalização, oferecemos soluções criativas e de alta qualidade. Para saber mais sobre as opções de personalização e cores disponíveis, entre em contato com a EPS Company.'
+                textoBotao='Faça seu orçamento'
+                imagem='/letras-personalizadas-card-produto.png'
+                linkBotao='#formulario'
+              />
 
-          <CardProduto
-            id={'contrapiso'}
-            titulo='Contrapiso'
-            descricao='Placas de isopor para contrapiso, disponíveis em diversos tamanhos e tipos, proporcionando uma base leve, resistente e de fácil instalação. Ideais para projetos de construção e reforma, essas placas são uma solução eficiente para melhorar o isolamento térmico e acústico de qualquer ambiente. Desenvolvemos produtos sob medida para atender a diferentes especificações de obras. Para mais informações ou para consultar as opções disponíveis, entre em contato com nossa equipe especializada.'
-            textoBotao='Faça seu orçamento'
-            imagem='/contrapiso-card-produto.png'
-            linkBotao='#formulario'
-          />
+              <CardProduto
+                id='contrapiso'
+                titulo='Contrapiso'
+                descricao='Placas de isopor para contrapiso, disponíveis em diversos tamanhos e tipos, proporcionando uma base leve, resistente e de fácil instalação. Ideais para projetos de construção e reforma, essas placas são uma solução eficiente para melhorar o isolamento térmico e acústico de qualquer ambiente. Desenvolvemos produtos sob medida para atender a diferentes especificações de obras. Para mais informações ou para consultar as opções disponíveis, entre em contato com nossa equipe especializada.'
+                textoBotao='Faça seu orçamento'
+                imagem='/contrapiso-card-produto.png'
+                linkBotao='#formulario'
+              />
+            </>
+          )}
+
+          {!mostrarMais ? (
+            <button onClick={handleMostrarMais} className={styles['mostrar-mais']}>
+              Mostrar mais produtos
+            </button>
+          ) : (
+            <button onClick={handleMostrarMenos} className={styles['mostrar-menos']}>
+              Mostrar menos produtos
+            </button>
+          )}
         </div>
       </section>
 
@@ -178,7 +203,10 @@ export default function Home() {
             <div
               className={styles['secao-historia__container__div-texto__botoes']}
             >
-              <BotaoPrimario texto='Faça seu orçamento conosco' caminho='#formulario' />
+              <BotaoPrimario
+                texto='Faça seu orçamento conosco'
+                caminho='#formulario'
+              />
             </div>
           </div>
         </div>
@@ -211,7 +239,8 @@ export default function Home() {
                   src='/icone-localizacao.svg'
                   alt='Ícone de localização'
                 />
-                <a href="https://maps.app.goo.gl/HUZVxqZxSEVCR24T8"
+                <a
+                  href='https://maps.app.goo.gl/HUZVxqZxSEVCR24T8'
                   className={
                     styles[
                       'secao-contato__container__div-texto__endereco__paragrafo'
@@ -286,9 +315,15 @@ export default function Home() {
                   styles['secao-contato__container__div-texto__div-botoes']
                 }
               >
-                <BotaoSecundario texto='Como chegar' caminho='https://maps.app.goo.gl/HUZVxqZxSEVCR24T8' />
+                <BotaoSecundario
+                  texto='Como chegar'
+                  caminho='https://maps.app.goo.gl/HUZVxqZxSEVCR24T8'
+                />
 
-                <BotaoPrimario texto='Faça seu orçamento' caminho='#formulario' />
+                <BotaoPrimario
+                  texto='Faça seu orçamento'
+                  caminho='#formulario'
+                />
               </div>
             </div>
           </div>

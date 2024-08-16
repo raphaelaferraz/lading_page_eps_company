@@ -177,3 +177,19 @@
 .secao-formulario {
   margin-bottom: $spacing-5;
 }
+
+.mostrar-mais, .mostrar-menos {
+  background: none;
+  text-decoration: underline;
+  color: $azul-10;
+  border: none;
+  outline: none;
+  font-size: $spacing-1;
+  font-weight: $font-extra-light;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    color: $azul-60;
+  }
+}
