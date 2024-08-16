@@ -103,19 +103,39 @@ export default function Home() {
 
         <div className={styles['secao-produto__container']}>
           <CardProduto
+            id='placas'
             titulo='Placas de Isopor'
-            descricao='Placas de isopor para isolamento térmico e acústico, com diversas espessuras e tamanhos. Ideal para quem busca conforto térmico e acústico em ambientes residenciais e comerciais.'
+            descricao='Placas de isopor fabricadas sob medida para atender a qualquer objetivo, seja para isolamento térmico, acústico ou outros projetos específicos. Disponíveis em diferentes tipos, como T1, T2 e T3, essas placas podem ser produzidas em diversas espessuras e tamanhos, proporcionando soluções personalizadas para ambientes residenciais, comerciais e industriais. Atendemos tanto pequenas quanto grandes quantidades, garantindo flexibilidade nas encomendas. Para mais informações ou para especificações técnicas, entre em contato com a equipe da EPS Company.'
             textoBotao='Faça seu orçamento'
             imagem='/placas-card-produto.png'
-            linkBotao='/'
+            linkBotao='#formulario'
           />
 
           <CardProduto
+            id={'cubos'}
             titulo='Cubos de Isopor'
-            descricao="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+            descricao='Cubos de isopor versáteis, ideais para embalagens que protegem produtos durante o transporte e armazenamento. Podem ser confeccionados em diferentes tipos de isopor e são personalizados em tamanhos variados conforme suas preferências. Cada pedido é entregue em sacos de 250 litros, com a quantidade ajustada às necessidades do seu projeto. Garantimos qualidade e precisão em cada peça. Para detalhes adicionais ou para fazer seu pedido personalizado, fale com nossa equipe.'
             textoBotao='Faça seu orçamento'
             imagem='/cubos-isopor-card-produto.png'
-            linkBotao='/'
+            linkBotao='#formulario'
+          />
+
+          <CardProduto
+            id={'letras'}
+            titulo='Letras de Isopor'
+            descricao='Letras personalizadas em isopor, perfeitas para destacar fachadas de lojas, empresas ou outros meios de comunicação visual. Disponíveis em diferentes tipos de isopor, essas letras podem ser moldadas em diversos tamanhos e estilos, atendendo às necessidades específicas de sua marca ou evento. Seja para decoração, publicidade ou sinalização, oferecemos soluções criativas e de alta qualidade. Para saber mais sobre as opções de personalização e cores disponíveis, entre em contato com a EPS Company.'
+            textoBotao='Faça seu orçamento'
+            imagem='/letras-personalizadas-card-produto.png'
+            linkBotao='#formulario'
+          />
+
+          <CardProduto
+            id={'contrapiso'}
+            titulo='Contrapiso'
+            descricao='Placas de isopor para contrapiso, disponíveis em diversos tamanhos e tipos, proporcionando uma base leve, resistente e de fácil instalação. Ideais para projetos de construção e reforma, essas placas são uma solução eficiente para melhorar o isolamento térmico e acústico de qualquer ambiente. Desenvolvemos produtos sob medida para atender a diferentes especificações de obras. Para mais informações ou para consultar as opções disponíveis, entre em contato com nossa equipe especializada.'
+            textoBotao='Faça seu orçamento'
+            imagem='/contrapiso-card-produto.png'
+            linkBotao='#formulario'
           />
         </div>
       </section>
@@ -158,14 +178,14 @@ export default function Home() {
             <div
               className={styles['secao-historia__container__div-texto__botoes']}
             >
-              <BotaoPrimario texto='Faça seu orçamento conosco' caminho='/' />
+              <BotaoPrimario texto='Faça seu orçamento conosco' caminho='#formulario' />
             </div>
           </div>
         </div>
       </section>
 
       <section id={'contato'} className={styles['secao-contato']}>
-        <Titulo conteudo='Conheça nossa história' cor='#1E52CF' />
+        <Titulo conteudo='Entre em contato conosco' cor='#1E52CF' />
 
         <div className={styles['secao-contato__container']}>
           <div>
@@ -191,7 +211,7 @@ export default function Home() {
                   src='/icone-localizacao.svg'
                   alt='Ícone de localização'
                 />
-                <p
+                <a href="https://maps.app.goo.gl/HUZVxqZxSEVCR24T8"
                   className={
                     styles[
                       'secao-contato__container__div-texto__endereco__paragrafo'
@@ -199,8 +219,8 @@ export default function Home() {
                   }
                 >
                   R. Rio Paranapanema, 750 - Chácara Jaraguá, São Paulo - SP,
-                  05240-090{' '}
-                </p>
+                  05240-090
+                </a>
               </div>
             </div>
 
@@ -266,9 +286,9 @@ export default function Home() {
                   styles['secao-contato__container__div-texto__div-botoes']
                 }
               >
-                <BotaoSecundario texto='Como chegar' caminho='/' />
+                <BotaoSecundario texto='Como chegar' caminho='https://maps.app.goo.gl/HUZVxqZxSEVCR24T8' />
 
-                <BotaoPrimario texto='Faça seu orçamento' caminho='/' />
+                <BotaoPrimario texto='Faça seu orçamento' caminho='#formulario' />
               </div>
             </div>
           </div>

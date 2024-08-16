@@ -134,6 +134,12 @@
         font-size: $normal-text;
         font-weight: $font-light;
         line-height: $spacing-1-5;
+        transition: all 0.3s;
+
+        &__paragrafo:hover {
+          cursor: pointer;
+          color: $azul-60;
+        }
       }
 
       &__contatos {

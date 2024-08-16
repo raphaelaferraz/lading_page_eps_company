@@ -36,7 +36,7 @@ export default function CarrosselPrincipaisProdutos() {
           descricao='Sob medida'
           textoBotao='Ver mais'
           imagem='/placas-card-produto.png'
-          linkBotao='/'
+          linkBotao='#produtos'
         />
       </SwiperSlide>
       <SwiperSlide>
@@ -45,7 +45,7 @@ export default function CarrosselPrincipaisProdutos() {
           descricao='Sob medida'
           textoBotao='Ver mais'
           imagem='/cubos-isopor-card-produto.png'
-          linkBotao='/'
+          linkBotao='#cubos'
         />
       </SwiperSlide>
       <SwiperSlide>
@@ -54,7 +54,7 @@ export default function CarrosselPrincipaisProdutos() {
           descricao='Sob medida'
           textoBotao='Ver mais'
           imagem='/letras-personalizadas-card-produto.png'
-          linkBotao='/'
+          linkBotao='#letras'
         />
       </SwiperSlide>
       <SwiperSlide>
@@ -63,7 +63,7 @@ export default function CarrosselPrincipaisProdutos() {
           descricao='Sob medida'
           textoBotao='Ver mais'
           imagem='/contrapiso-card-produto.png'
-          linkBotao='/'
+          linkBotao='#contrapiso'
         />
       </SwiperSlide>
     </Swiper>

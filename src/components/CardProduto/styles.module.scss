@@ -15,7 +15,8 @@
       
       &__imagem {
         width: $spacing-24;
-        height: 100%;
+        height: $spacing-18;
+        min-height: 100%;
         object-fit: cover; 
         border-radius: inherit; 
 
