@@ -8,6 +8,10 @@
   font-size: $normal-text;
   font-weight: $font-light;
   transition: all .5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   &:hover {
     background-color: $azul-90;

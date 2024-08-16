@@ -24,16 +24,13 @@
 
     @media (max-width: 768px) {
       flex-direction: column;
-      align-items: start;
-      margin-top: $spacing-3;
-      margin-bottom: $spacing-2;
-      width: 100%;
+      margin-top: $spacing-2;
     }
   }
 
   &__container-infos {
     &__titulo {
-      font-family: $heading-1-desktop;
+      font-family: $heading-2-desktop;
       margin-top: $spacing-8;
       width: 650px;
       line-height: $spacing-4;
@@ -175,6 +172,7 @@
       top: $spacing-5;
       left: 0;
       background-color: $azul-80;
+      z-index: 2;
     }
 
     &__menu__label {

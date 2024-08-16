@@ -9,13 +9,13 @@ export default function Dropdown({ id, label, options, value, onChange, placehol
         id={id}
         className={styles.container__select}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
       >
-        <option value="" disabled>
+        <option value="" disabled className={styles["container__select__option-disabled"]}>
           {placeholder}
         </option>
         {options.map((option) => (
-          <option key={option} value={option}>
+          <option className={styles["container__select__option"]} key={option} value={option}>
             {option}
           </option>
         ))}

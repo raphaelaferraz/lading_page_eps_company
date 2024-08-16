@@ -13,18 +13,30 @@
   }
   
   &__select {
-    height: $spacing-4;
+    height: $spacing-3;
     border-radius: 15px;
     outline: none;
     border: none;
     background-color: $cinza-escuro-100;
-    padding: $spacing-1;
-    color: $azul-10;
+    padding: $spacing-0;
     font-size: $large-text;
     font-weight: $font-light;
+    color: $azul-10;
+
+    &__option-disabled {
+      color: $cinza-claro-20;
+    }
+
+    &__option {
+      color: $azul-10;
+    }
     
     &::placeholder {
-      color: $cinza-claro-20;
+      color: $cinza-claro-20!important;
+    }
+    
+    option:disabled {
+      color: $cinza-claro-20;  
     }
   }
 }
