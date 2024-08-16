@@ -1,0 +1,55 @@
+@use "../../styles/_variables" as *;
+
+.container {
+  border-radius: 20px;
+  width: $spacing-24;
+  padding: $spacing-1 $spacing-1-5;
+
+  &__container {
+    &-icone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-texto {
+      &__titulo {
+        margin-top: $spacing-1;
+        margin-bottom: $spacing-0;
+        font-size: $heading-3-desktop;
+        line-height: $spacing-2;
+        font-weight: $font-bold;
+
+        @media (max-width: 768px) {
+          font-size: $heading-2-mobile;
+        }
+      }
+
+      &__descricao {
+        margin-top: $spacing-1;
+        margin-bottom: $spacing-0;
+        font-size: $normal-text;
+        color: $azul-30;
+        line-height: $spacing-1-5;
+        font-weight: $font-light;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: $spacing-1;
+    height: inherit;
+  }
+}
+
+.transparente {
+  background: transparent;
+  border: 1px solid $azul-10;
+  color: $azul-90;
+}
+
+.vermelho {
+  background: $vermelho-100;
+  border: none;
+}

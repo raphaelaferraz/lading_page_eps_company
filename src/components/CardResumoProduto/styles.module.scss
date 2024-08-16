@@ -1,0 +1,45 @@
+@use "../../styles/_variables" as *;
+
+.container {
+  background-size: cover;
+  width: 302px;
+  height: 310px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  
+  // media query
+  @media (min-width: 768px) {
+    margin: 0 auto;
+  }
+
+  &__container {
+    &-texto {
+      background: $cinza-escuro-70, #5A564F;
+      backdrop-filter: blur(100px);
+      padding: $spacing-1 $spacing-0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__div {
+        &__titulo {
+          font-size: $normal-text;
+          color: $branco;
+          font-weight: $font-medium;
+          margin-bottom: $spacing-0;
+        }
+
+        &__descricao {
+          font-size: $small-text;
+          color: $azul-30;
+          font-weight: $font-light;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
+}
