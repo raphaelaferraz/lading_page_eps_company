@@ -49,19 +49,19 @@ export default function Header() {
         <nav className={styles.header__nav}>
           <ul className={styles.header__nav__list}>
             <li className={styles.header__nav__list__item}>
-              <a className={styles.header__nav__list__item__link} href="/">Produtos</a>
+              <a className={styles.header__nav__list__item__link} href="#principais-produtos">Produtos</a>
             </li>
             <li className={styles.header__nav__list__item}>
-              <a className={styles.header__nav__list__item__link} href="/">Aplicações do Isopor</a>
+              <a className={styles.header__nav__list__item__link} href="#aplicacoes">Aplicações do Isopor</a>
             </li>
             <li className={styles.header__nav__list__item}>
-              <a className={styles.header__nav__list__item__link} href="/">Sobre nós</a>
+              <a className={styles.header__nav__list__item__link} href="#historia">Sobre nós</a>
             </li>
             <li className={styles.header__nav__list__item}>
-              <a className={styles.header__nav__list__item__link} href="/">Contato</a>
+              <a className={styles.header__nav__list__item__link} href="#contato">Contato</a>
             </li>
             <li className={styles.header__nav__list__item}>
-              <a className={`${styles.header__nav__list__item__link} ${styles.header__nav__list__item__link__botao}`} href="/">Faça seu orçamento</a>
+              <a className={`${styles.header__nav__list__item__link} ${styles.header__nav__list__item__link__botao}`} href="#formulario">Faça seu orçamento</a>
             </li>
           </ul>
         </nav>

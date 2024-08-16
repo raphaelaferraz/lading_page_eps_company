@@ -30,9 +30,7 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <section
-        id={'principais-produtos'}
-        className={styles['secao-principais-produtos']}
+      <section id={'principais-produtos'} className={styles['secao-principais-produtos']}
       >
         <Titulo conteudo='Confira nossos principais produtos' cor='#1E52CF' />
 

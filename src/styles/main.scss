@@ -9,6 +9,34 @@
   outline: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: $cinza-escuro-100; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $azul-60;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $azul-70; 
+}
+
+
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+}
+
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: $cinza-escuro-100;
